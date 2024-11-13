@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-pai">
+        <div class="caixa">
+            <h1>Sistema de Biblioteca</h1>
+            <div class="container">
+                <button onclick="showSection('usuarios')">Gerenciar Usuários</button>
+                <button onclick="showSection('livros')">Gerenciar Livros</button>
+                <button onclick="showSection('emprestimos')">Gerenciar Empréstimos</button>
+                <button onclick="showSection('sistemaBiblioteca')">Configurar Sistema de Biblioteca</button>
+            </div>
+        </div>
+        <div class="caixa">
+            <div id="usuarios" class="section">
+                <h2>Usuários</h2>
+                <div id="userForm"></div>
+                <div id="userList"></div>
+            </div>
+            <div id="livros" class="section">
+                <h2>Livros</h2>
+                <div id="bookForm"></div>
+                <div id="bookList"></div>
+            </div>
+            <div id="emprestimos" class="section">
+                <h2>Empréstimos</h2>
+                <div id="loanForm"></div>
+                <div id="loanList"></div>
+            </div>
+            <div id="sistemaBiblioteca" class="section">
+                <h2>Sistema de Biblioteca</h2>
+                <div id="libraryInfo"></div>
+                <div id="libraryConfig"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/loan.js"></script>
+    <script src="js/library.js"></script>
+</body>
+</html>

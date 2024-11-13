@@ -1,0 +1,132 @@
+/* Estilos gerais */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image: url(../assets/biblioteca-interior-sala-vazia-para-ler-com-livros-nas-prateleiras-de-madeira_33099-1722.avif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333333;
+    text-align: center;
+}
+
+.container-pai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.caixa{
+    background-color: #ffffffc6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+}
+/* Cabeçalho */
+h1 {
+    color: #4a7a8c;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #4a7a8c;
+    margin-bottom: 15px;
+}
+
+/* Container principal */
+.container {
+    margin-top: 30px;
+}
+
+/* Botões principais */
+button {
+    background-color: #4a7a8c;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #376270;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(74, 122, 140, 0.6);
+}
+
+/* Seções de conteúdo */
+.section {
+    display: none; /* Esconde as seções por padrão */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.section.active {
+    display: block; /* Exibe a seção ativa */
+}
+
+/* Estilo para informações e formulários */
+#userList, #bookList, #loanList, #libraryInfo {
+    text-align: left;
+    margin-top: 15px;
+    color: #333333;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Input e botões do formulário de configuração */
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    width: 80%;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+#libraryConfig button {
+    background-color: #8b5e3c;
+    margin-top: 10px;
+}
+
+#libraryConfig button:hover {
+    background-color: #70472f;
+}
+
+/* Estilo de links e ícones, caso adicionados */
+a {
+    color: #4a7a8c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
