@@ -1,18 +1,32 @@
-// Objeto que representa as configurações do sistema de biblioteca
-let librarySystem = {
-    maxUsers: 50, // Quantidade máxima padrão de usuários
-    loanedBooks: 0 // Inicialmente, não há livros emprestados
-};
+// Array que representa os usuários cadastrados
+let users = [];
 
-// Função para renderizar as informações e configurações do sistema de biblioteca na página
+// Função para adicionar um novo usuário
+function addUser(username) {
+    if (users.length < librarySystem.maxUsers) { // Verifica se ainda há espaço para novos usuários
+        users.push(username);
+        alert(`Usuário ${username} adicionado com sucesso.`);
+    } else {
+        alert("Limite máximo de usuários atingido.");
+    }
+    renderLibraryInfo(); // Atualiza a exibição de informações na página
+}
+
+// Função para atualizar a quantidade de usuários mostrada na página
+function updateUserCount() {
+    const userCountElement = document.getElementById('userCount');
+    userCountElement.innerHTML = `<p>Total de Usuários: ${users.length}</p>`;
+}
+
+// Atualização da função renderLibraryInfo para incluir contagem de usuários
 function renderLibraryInfo() {
     const libraryInfo = document.getElementById('libraryInfo');
     libraryInfo.innerHTML = `
         <p>Quantidade Máxima de Usuários: ${librarySystem.maxUsers}</p>
         <p>Quantidade de Livros Emprestados: ${librarySystem.loanedBooks}</p>
+        <p>Total de Usuários Cadastrados: ${users.length}</p>
     `;
 
-    // Formulário para ajustar a quantidade máxima de usuários
     const libraryConfig = document.getElementById('libraryConfig');
     libraryConfig.innerHTML = `
         <label for="maxUsersInput">Definir Quantidade Máxima de Usuários:</label>
@@ -21,22 +35,16 @@ function renderLibraryInfo() {
     `;
 }
 
-// Função para atualizar a quantidade máxima de usuários
-function updateMaxUsers() {
-    const maxUsersInput = document.getElementById('maxUsersInput').value;
-    if (maxUsersInput > 0) {
-        librarySystem.maxUsers = parseInt(maxUsersInput);
-        alert(`Quantidade máxima de usuários atualizada para: ${librarySystem.maxUsers}`);
-        renderLibraryInfo();
+// Função para remover um usuário (opcional)
+function removeUser(username) {
+    const index = users.indexOf(username);
+    if (index !== -1) {
+        users.splice(index, 1);
+        alert(`Usuário ${username} removido.`);
+        renderLibraryInfo(); // Atualiza as informações
     } else {
-        alert("Por favor, insira um valor válido para a quantidade máxima de usuários.");
+        alert("Usuário não encontrado.");
     }
-}
-
-// Função para atualizar o número de livros emprestados
-function updateLoanedBooks() {
-    librarySystem.loanedBooks = loans.length; // Atualiza com base no número atual de empréstimos
-    renderLibraryInfo();
 }
 
 // Chamadas iniciais para renderizar as informações ao carregar a página
